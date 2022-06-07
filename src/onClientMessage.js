@@ -1,5 +1,3 @@
-const { setRole, setHome, graphActivity } = require('./commands')
-
 function onClientMessage(message) {
     // if the message isnt meant for this bot then ignore it
     if (message.content.substring(0, 1) !== '~') {
@@ -12,14 +10,8 @@ function onClientMessage(message) {
     }
 
     switch (commandArguments[0]) {
-        case '~setrole':
-            setRole(message)
-            break;
-        case '~sethome':
-            setHome(message)
-            break;
-        case '~graph-activity':
-            graphActivity(message)
+        case '~listen':
+            // Join the voice channel and start transcribing
             break;
         default:
             message.channel.send('Command Not Found.')
